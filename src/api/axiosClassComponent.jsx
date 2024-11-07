@@ -35,7 +35,7 @@ export default class AxiosClass extends React.Component {
 
           {this.state.utilisateur.map((user) => (
             <div className='child' key={user.id} style={this.child}>
-              <h3>nom : {user.name} {user.username}</h3>
+              <h3>nom  : {user.name} {user.username}</h3>
               <p>email : {user.email}</p>
               <p>ville : {user.address.city} rue : {user.address.street}</p>
             </div>
