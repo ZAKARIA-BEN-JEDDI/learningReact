@@ -133,6 +133,9 @@ export default function ExerciceApi(){
               <h1> name : {data.name} </h1><br/>
               email : {data.email} <br/>
               city : {data.address.city}  rue:{data.address.street} <br/>
+              {afficherPost && (
+                  <p>test</p>
+                )}
               <button key={key} style={buttonStyle} 
                 onClick={
                   ()=>{
