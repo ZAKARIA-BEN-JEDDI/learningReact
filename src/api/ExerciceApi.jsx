@@ -133,26 +133,36 @@ export default function ExerciceApi(){
               <h1> name : {data.name} </h1><br/>
               email : {data.email} <br/>
               city : {data.address.city}  rue:{data.address.street} <br/>
-              {afficherPost && (
-                  <p>test</p>
-                )}
-              <button key={key} style={buttonStyle} 
+              <button key={key} style={buttonStyle}
                 onClick={
                   ()=>{
+                    axios.get(`https://jsonplaceholder.typicode.com/posts?id=${key+1}`)
+                    .then(
+                      (res)=>{
+                        setPostutilisateur(res.data)
+                        // console.log(Postutilisateur)
+                      }
+                    )
                     SetafficherPost(true)
-                    console.log(key)  
-                    axios.get(`https://jsonplaceholder.typicode.com/posts?id=${key}`)
-                      .then(
-                        (res)=>{
-                          setPostutilisateur(res.data)
-                          console.log(Postutilisateur)
-                        }
-                      )
-                    }
+                  }
                 }>
-                
                 details posts
               </button>
+
+              {afficherPost && (
+                <div>
+                  <div>
+                    {Postutilisateur.map((task, key) => {
+                      return (
+                        <div key={key}>
+                          <p>Title : {task.title}</p><br />
+                          <p>Body : {task.body}</p>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
       ))}

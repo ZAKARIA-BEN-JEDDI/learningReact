@@ -15,25 +15,21 @@ import logo from './logo.svg';
 // import Axios from './api/axios';
 // import Fetch from './api/fetch';
 // import AxiosClass from './api/axiosClassComponent'
-import ExreciceApi from './api/ExerciceApi'
-function App() {
+// import ExreciceApi from './api/ExerciceApi'
+// import { useSelector, useDispatch } from "react-redux";
+
+
+import React from 'react';
+import ListLivre from './ListLivre';
+import AddLivre from './AddLivre';
+
+const App = () => {
   return (
-    <ExreciceApi/>
-    // <AxiosClass/>
-    // <Fetch/>
-    // <Axios/>
-    // <Magic/>
-    // <UseParam1/>
-    // <Routing4/>
-    // <Routing3/>
-    // <Routing/>
-    // <Parent/>
-    // <FormStyle/>
-    // <StyledComponent/>
-    // <StyleModule/>
-    // <Style/>
-    // <CssStyle/>
+    <div>
+      <AddLivre />
+      <ListLivre />
+    </div>
   );
-}
+};
 
 export default App;
